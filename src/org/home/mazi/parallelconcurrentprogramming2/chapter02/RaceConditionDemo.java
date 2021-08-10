@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 class Shopper extends Thread {
 	public static int bagsOfChips = 1;
-	private static Lock pencil = new ReentrantLock();
+	private static final Lock pencil = new ReentrantLock();
 
 	public Shopper(String threadName) {
 		super(threadName);
@@ -33,6 +33,7 @@ class Shopper extends Thread {
 	}
 }
 
+// 1 DEMO
 public class RaceConditionDemo {
 	public static void main(String[] args) throws InterruptedException {
 		Shopper[] shoppers = new Shopper[10];
